@@ -1,0 +1,22 @@
+steps to initia demo for Kafka using a 2 bucket configuraiton and a stand alone kafka-server configuration.
+1. create a couchbase docker instance, see the docker hub for couchbase for example. 
+if using couchbase docker instance as a server:
+	setup couchbase node with at least "data" but having more services can be beneficial
+if using couchbase docker instance as a client:
+   	configure the bin/run-demo docker command to point to the correct "couchbase" host 
+2. to start the demo execute "sh bin/run-demo.sh
+3. to clean the demo executer "sh bin/clean-demo.sh"
+4. be sure to customize source or sink files for the correct couchbase URL in  lib/kafka-connect-couchbase-3.1.0/config/
+
+
+once prepared and all files are configured for the test
+
+Execute sh bin/run-demo.sh 
+
+
+cleanup
+when done with the test:
+1. stop the kafka client
+2. run the clean-demo.sh script
+3. flush all buckets
+

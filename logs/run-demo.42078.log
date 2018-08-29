@@ -1,0 +1,650 @@
+[2018-08-29 00:13:15,913] INFO Kafka Connect standalone worker initializing ... (org.apache.kafka.connect.cli.ConnectStandalone:65)
+[2018-08-29 00:13:15,924] INFO WorkerInfo values: 
+	jvm.args = -Xmx256M, -XX:+UseG1GC, -XX:MaxGCPauseMillis=20, -XX:InitiatingHeapOccupancyPercent=35, -XX:+ExplicitGCInvokesConcurrent, -Djava.awt.headless=true, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -Dkafka.logs.dir=/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../logs, -Dlog4j.configuration=file:./bin/../config/connect-log4j.properties
+	jvm.spec = Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 1.8.0_71, 25.71-b15
+	jvm.classpath = /Users/austin/Downloads/kafka_2.11-1.0.0/libs/kafka-connect-couchbase-3.2.1/kafka-connect-couchbase-3.2.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/libs/kafka-connect-couchbase-3.2.1/custom-source-handler-1.0-SNAPSHOT.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/argparse4j-0.7.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/commons-lang3-3.5.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-api-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-file-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-json-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-runtime-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-transforms-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/guava-20.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/hk2-api-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/hk2-locator-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/hk2-utils-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-annotations-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-core-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-databind-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-jaxrs-base-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-jaxrs-json-provider-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-module-jaxb-annotations-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javassist-3.20.0-GA.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javassist-3.21.0-GA.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.annotation-api-1.2.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.inject-1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.inject-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.servlet-api-3.1.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-client-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-common-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-container-servlet-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-guava-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-media-jaxb-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-server-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-continuation-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-http-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-io-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-security-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-server-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-servlet-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-servlets-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-util-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jopt-simple-5.0.4.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-clients-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-connect-couchbase-3.2.1:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-log4j-appender-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-streams-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-streams-examples-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-tools-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka_2.11-1.0.0-sources.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka_2.11-1.0.0-test-sources.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka_2.11-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/log4j-1.2.17.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/lz4-java-1.4.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/maven-artifact-3.5.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/metrics-core-2.2.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/plexus-utils-3.0.24.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/reflections-0.9.11.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/rocksdbjni-5.7.3.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/scala-library-2.11.11.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/slf4j-api-1.7.25.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/snappy-java-1.1.4.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/validation-api-1.1.0.Final.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/zkclient-0.10.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/zookeeper-3.4.10.jar
+	os.spec = Mac OS X, x86_64, 10.13.6
+	os.vcpus = 8
+ (org.apache.kafka.connect.runtime.WorkerInfo:71)
+[2018-08-29 00:13:15,927] INFO Scanning for plugin classes. This might take a moment ... (org.apache.kafka.connect.cli.ConnectStandalone:74)
+[2018-08-29 00:13:18,065] INFO Registered loader: sun.misc.Launcher$AppClassLoader@18b4aac2 (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:202)
+[2018-08-29 00:13:18,065] INFO Added plugin 'org.apache.kafka.connect.tools.MockSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,065] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,065] INFO Added plugin 'com.couchbase.connect.kafka.CouchbaseSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,065] INFO Added plugin 'org.apache.kafka.connect.tools.VerifiableSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,066] INFO Added plugin 'org.apache.kafka.connect.tools.SchemaSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,066] INFO Added plugin 'org.apache.kafka.connect.tools.MockSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,066] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,066] INFO Added plugin 'com.couchbase.connect.kafka.CouchbaseSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,066] INFO Added plugin 'org.apache.kafka.connect.tools.MockConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,066] INFO Added plugin 'org.apache.kafka.connect.tools.VerifiableSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,066] INFO Added plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,066] INFO Added plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,067] INFO Added plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,067] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,067] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,068] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,069] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,069] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,069] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,069] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,069] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,069] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,069] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,069] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 00:13:18,070] INFO Added aliases 'CouchbaseSinkConnector' and 'CouchbaseSink' to plugin 'com.couchbase.connect.kafka.CouchbaseSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,070] INFO Added aliases 'CouchbaseSourceConnector' and 'CouchbaseSource' to plugin 'com.couchbase.connect.kafka.CouchbaseSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,071] INFO Added aliases 'FileStreamSinkConnector' and 'FileStreamSink' to plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,071] INFO Added aliases 'FileStreamSourceConnector' and 'FileStreamSource' to plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,071] INFO Added aliases 'MockConnector' and 'Mock' to plugin 'org.apache.kafka.connect.tools.MockConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,071] INFO Added aliases 'MockSinkConnector' and 'MockSink' to plugin 'org.apache.kafka.connect.tools.MockSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,071] INFO Added aliases 'MockSourceConnector' and 'MockSource' to plugin 'org.apache.kafka.connect.tools.MockSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,071] INFO Added aliases 'SchemaSourceConnector' and 'SchemaSource' to plugin 'org.apache.kafka.connect.tools.SchemaSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,071] INFO Added aliases 'VerifiableSinkConnector' and 'VerifiableSink' to plugin 'org.apache.kafka.connect.tools.VerifiableSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,071] INFO Added aliases 'VerifiableSourceConnector' and 'VerifiableSource' to plugin 'org.apache.kafka.connect.tools.VerifiableSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,071] INFO Added aliases 'ByteArrayConverter' and 'ByteArray' to plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,072] INFO Added aliases 'JsonConverter' and 'Json' to plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,072] INFO Added aliases 'StringConverter' and 'String' to plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 00:13:18,073] INFO Added alias 'RegexRouter' to plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:327)
+[2018-08-29 00:13:18,073] INFO Added alias 'TimestampRouter' to plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:327)
+[2018-08-29 00:13:18,073] INFO Added alias 'ValueToKey' to plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:327)
+[2018-08-29 00:13:18,085] INFO StandaloneConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	bootstrap.servers = [localhost:9092]
+	internal.key.converter = class org.apache.kafka.connect.json.JsonConverter
+	internal.value.converter = class org.apache.kafka.connect.json.JsonConverter
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 10000
+	offset.flush.timeout.ms = 5000
+	offset.storage.file.filename = /tmp/connect.offsets
+	plugin.path = null
+	rest.advertised.host.name = null
+	rest.advertised.port = null
+	rest.host.name = null
+	rest.port = 8083
+	task.shutdown.graceful.timeout.ms = 5000
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.standalone.StandaloneConfig:223)
+[2018-08-29 00:13:18,179] INFO Logging initialized @2550ms (org.eclipse.jetty.util.log:186)
+[2018-08-29 00:13:18,300] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2018-08-29 00:13:18,300] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser:110)
+[2018-08-29 00:13:18,313] INFO Kafka Connect standalone worker initialization took 2399ms (org.apache.kafka.connect.cli.ConnectStandalone:87)
+[2018-08-29 00:13:18,313] INFO Kafka Connect starting (org.apache.kafka.connect.runtime.Connect:49)
+[2018-08-29 00:13:18,314] INFO Herder starting (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:70)
+[2018-08-29 00:13:18,314] INFO Worker starting (org.apache.kafka.connect.runtime.Worker:142)
+[2018-08-29 00:13:18,314] INFO Starting FileOffsetBackingStore with file /tmp/connect.offsets (org.apache.kafka.connect.storage.FileOffsetBackingStore:59)
+[2018-08-29 00:13:18,315] INFO Worker started (org.apache.kafka.connect.runtime.Worker:147)
+[2018-08-29 00:13:18,315] INFO Herder started (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:72)
+[2018-08-29 00:13:18,315] INFO Starting REST server (org.apache.kafka.connect.runtime.rest.RestServer:98)
+[2018-08-29 00:13:18,369] INFO jetty-9.2.22.v20170606 (org.eclipse.jetty.server.Server:327)
+[2018-08-29 00:13:18,748] INFO Started o.e.j.s.ServletContextHandler@56d96ef4{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler:744)
+[2018-08-29 00:13:18,773] INFO Started ServerConnector@3f3737bd{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.server.ServerConnector:266)
+[2018-08-29 00:13:18,773] INFO Started @3145ms (org.eclipse.jetty.server.Server:379)
+[2018-08-29 00:13:18,773] INFO REST server listening at http://192.168.86.32:8083/, advertising URL http://192.168.86.32:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:150)
+[2018-08-29 00:13:18,773] INFO Kafka Connect started (org.apache.kafka.connect.runtime.Connect:55)
+[2018-08-29 00:13:18,778] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 00:13:18,779] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 00:13:18,779] INFO Creating connector test-couchbase-sink of type com.couchbase.connect.kafka.CouchbaseSinkConnector (org.apache.kafka.connect.runtime.Worker:205)
+[2018-08-29 00:13:18,783] INFO Instantiated connector test-couchbase-sink with version 3.2.1 of type class com.couchbase.connect.kafka.CouchbaseSinkConnector (org.apache.kafka.connect.runtime.Worker:208)
+[2018-08-29 00:13:18,784] INFO Finished creating connector test-couchbase-sink (org.apache.kafka.connect.runtime.Worker:227)
+[2018-08-29 00:13:18,785] INFO SinkConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	topics = [publish-history]
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:223)
+[2018-08-29 00:13:18,785] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	topics = [publish-history]
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 00:13:18,787] INFO Creating task test-couchbase-sink-0 (org.apache.kafka.connect.runtime.Worker:361)
+[2018-08-29 00:13:18,787] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 00:13:18,787] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 00:13:18,789] INFO TaskConfig values: 
+	task.class = class com.couchbase.connect.kafka.CouchbaseSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:223)
+[2018-08-29 00:13:18,789] INFO Instantiated task test-couchbase-sink-0 with version 3.2.1 of type com.couchbase.connect.kafka.CouchbaseSinkTask (org.apache.kafka.connect.runtime.Worker:376)
+[2018-08-29 00:13:18,815] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-test-couchbase-sink
+	heartbeat.interval.ms = 3000
+	interceptor.classes = null
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 305000
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:223)
+[2018-08-29 00:13:18,861] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2018-08-29 00:13:18,862] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser:110)
+[2018-08-29 00:13:18,863] INFO Creating task test-couchbase-sink-1 (org.apache.kafka.connect.runtime.Worker:361)
+[2018-08-29 00:13:18,863] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 00:13:18,863] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 00:13:18,864] INFO TaskConfig values: 
+	task.class = class com.couchbase.connect.kafka.CouchbaseSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:223)
+[2018-08-29 00:13:18,864] INFO Instantiated task test-couchbase-sink-1 with version 3.2.1 of type com.couchbase.connect.kafka.CouchbaseSinkTask (org.apache.kafka.connect.runtime.Worker:376)
+[2018-08-29 00:13:18,864] INFO CouchbaseSinkTaskConfig values: 
+	connection.bucket = backOffice
+	connection.cluster_address = [localhost]
+	connection.password = [hidden]
+	connection.ssl.enabled = false
+	connection.ssl.keystore.location = 
+	connection.ssl.keystore.password = [hidden]
+	connection.timeout.ms = 10000
+	connection.username = Administrator
+	couchbase.document.id = 
+	couchbase.remove.document.id = false
+ (com.couchbase.connect.kafka.CouchbaseSinkTaskConfig:223)
+[2018-08-29 00:13:18,866] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-test-couchbase-sink
+	heartbeat.interval.ms = 3000
+	interceptor.classes = null
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 305000
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:223)
+[2018-08-29 00:13:18,871] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2018-08-29 00:13:18,871] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser:110)
+[2018-08-29 00:13:18,872] INFO CouchbaseSinkTaskConfig values: 
+	connection.bucket = backOffice
+	connection.cluster_address = [localhost]
+	connection.password = [hidden]
+	connection.ssl.enabled = false
+	connection.ssl.keystore.location = 
+	connection.ssl.keystore.password = [hidden]
+	connection.timeout.ms = 10000
+	connection.username = Administrator
+	couchbase.document.id = 
+	couchbase.remove.document.id = false
+ (com.couchbase.connect.kafka.CouchbaseSinkTaskConfig:223)
+[2018-08-29 00:13:18,872] INFO Created connector test-couchbase-sink (org.apache.kafka.connect.cli.ConnectStandalone:99)
+[2018-08-29 00:13:18,874] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 00:13:18,875] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 00:13:18,875] INFO Creating connector test-couchbase-source of type com.couchbase.connect.kafka.CouchbaseSourceConnector (org.apache.kafka.connect.runtime.Worker:205)
+[2018-08-29 00:13:18,875] INFO Instantiated connector test-couchbase-source with version 3.2.1 of type class com.couchbase.connect.kafka.CouchbaseSourceConnector (org.apache.kafka.connect.runtime.Worker:208)
+[2018-08-29 00:13:18,876] INFO CouchbaseSourceConnectorConfig values: 
+	batch.size.max = 2000
+	compat.connector_name_in_offsets = false
+	connection.bucket = regional
+	connection.cluster_address = [localhost]
+	connection.password = [hidden]
+	connection.ssl.enabled = false
+	connection.ssl.keystore.location = 
+	connection.ssl.keystore.password = [hidden]
+	connection.timeout.ms = 2000
+	connection.username = Administrator
+	dcp.message.converter.class = com.couchbase.connect.kafka.example.CustomSourceHandler
+	event.filter.class = com.couchbase.connect.kafka.filter.AllPassFilter
+	topic.name = publish-history
+	use_snapshots = false
+ (com.couchbase.connect.kafka.CouchbaseSourceConnectorConfig:223)
+[2018-08-29 00:13:18,879] WARN More than 1 Couchbase Environments found (2), this can have severe impact on performance and stability. Reuse environments! (com.couchbase.client.core.env.CoreEnvironment:145)
+[2018-08-29 00:13:18,959] INFO CouchbaseEnvironment: {sslEnabled=false, sslKeystoreFile='', sslKeystorePassword=false, sslKeystore=null, bootstrapHttpEnabled=true, bootstrapCarrierEnabled=true, bootstrapHttpDirectPort=8091, bootstrapHttpSslPort=18091, bootstrapCarrierDirectPort=11210, bootstrapCarrierSslPort=11207, ioPoolSize=8, computationPoolSize=8, responseBufferSize=16384, requestBufferSize=16384, kvServiceEndpoints=1, viewServiceEndpoints=12, queryServiceEndpoints=12, searchServiceEndpoints=12, configPollInterval=10000, ioPool=NioEventLoopGroup, kvIoPool=null, viewIoPool=null, searchIoPool=null, queryIoPool=null, coreScheduler=CoreScheduler, memcachedHashingStrategy=DefaultMemcachedHashingStrategy, eventBus=DefaultEventBus, packageNameAndVersion=couchbase-java-client/2.5.1 (git: 2.5.1, core: 1.4.7), dcpEnabled=false, retryStrategy=BestEffort, maxRequestLifetime=75000, retryDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=100, upper=100000}, reconnectDelay=ExponentialDelay{growBy 1.0 MILLISECONDS, powers of 2; lower=32, upper=4096}, observeIntervalDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=10, upper=100000}, keepAliveInterval=30000, continuousKeepAliveEnabled=true, keepAliveErrorThreshold=4, keepAliveTimeout=2500, autoreleaseAfter=2000, bufferPoolingEnabled=true, tcpNodelayEnabled=true, mutationTokensEnabled=false, socketConnectTimeout=1000, dcpConnectionBufferSize=20971520, dcpConnectionBufferAckThreshold=0.2, dcpConnectionName=dcp/core-io, callbacksOnIoPool=false, disconnectTimeout=25000, requestBufferWaitStrategy=com.couchbase.client.core.env.DefaultCoreEnvironment$2@5baf799f, certAuthEnabled=false, queryTimeout=75000, viewTimeout=75000, searchTimeout=75000, analyticsTimeout=75000, kvTimeout=2500, connectTimeout=10000, dnsSrvEnabled=false} (com.couchbase.client.core.CouchbaseCore:115)
+[2018-08-29 00:13:18,959] INFO CouchbaseEnvironment: {sslEnabled=false, sslKeystoreFile='', sslKeystorePassword=false, sslKeystore=null, bootstrapHttpEnabled=true, bootstrapCarrierEnabled=true, bootstrapHttpDirectPort=8091, bootstrapHttpSslPort=18091, bootstrapCarrierDirectPort=11210, bootstrapCarrierSslPort=11207, ioPoolSize=8, computationPoolSize=8, responseBufferSize=16384, requestBufferSize=16384, kvServiceEndpoints=1, viewServiceEndpoints=12, queryServiceEndpoints=12, searchServiceEndpoints=12, configPollInterval=10000, ioPool=NioEventLoopGroup, kvIoPool=null, viewIoPool=null, searchIoPool=null, queryIoPool=null, coreScheduler=CoreScheduler, memcachedHashingStrategy=DefaultMemcachedHashingStrategy, eventBus=DefaultEventBus, packageNameAndVersion=couchbase-java-client/2.5.1 (git: 2.5.1, core: 1.4.7), dcpEnabled=false, retryStrategy=BestEffort, maxRequestLifetime=75000, retryDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=100, upper=100000}, reconnectDelay=ExponentialDelay{growBy 1.0 MILLISECONDS, powers of 2; lower=32, upper=4096}, observeIntervalDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=10, upper=100000}, keepAliveInterval=30000, continuousKeepAliveEnabled=true, keepAliveErrorThreshold=4, keepAliveTimeout=2500, autoreleaseAfter=2000, bufferPoolingEnabled=true, tcpNodelayEnabled=true, mutationTokensEnabled=false, socketConnectTimeout=1000, dcpConnectionBufferSize=20971520, dcpConnectionBufferAckThreshold=0.2, dcpConnectionName=dcp/core-io, callbacksOnIoPool=false, disconnectTimeout=25000, requestBufferWaitStrategy=com.couchbase.client.core.env.DefaultCoreEnvironment$2@349e4c82, certAuthEnabled=false, queryTimeout=75000, viewTimeout=75000, searchTimeout=75000, analyticsTimeout=75000, kvTimeout=2500, connectTimeout=10000, dnsSrvEnabled=false} (com.couchbase.client.core.CouchbaseCore:115)
+[2018-08-29 00:13:19,229] INFO Finished creating connector test-couchbase-source (org.apache.kafka.connect.runtime.Worker:227)
+[2018-08-29 00:13:19,230] INFO SourceConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.SourceConnectorConfig:223)
+[2018-08-29 00:13:19,230] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 00:13:19,232] INFO Creating task test-couchbase-source-0 (org.apache.kafka.connect.runtime.Worker:361)
+[2018-08-29 00:13:19,233] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 00:13:19,233] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 00:13:19,234] INFO TaskConfig values: 
+	task.class = class com.couchbase.connect.kafka.CouchbaseSourceTask
+ (org.apache.kafka.connect.runtime.TaskConfig:223)
+[2018-08-29 00:13:19,234] INFO Instantiated task test-couchbase-source-0 with version 3.2.1 of type com.couchbase.connect.kafka.CouchbaseSourceTask (org.apache.kafka.connect.runtime.Worker:376)
+[2018-08-29 00:13:19,242] INFO ProducerConfig values: 
+	acks = all
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 9223372036854775807
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 2147483647
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+ (org.apache.kafka.clients.producer.ProducerConfig:223)
+[2018-08-29 00:13:19,258] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2018-08-29 00:13:19,258] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser:110)
+[2018-08-29 00:13:19,261] INFO Creating task test-couchbase-source-1 (org.apache.kafka.connect.runtime.Worker:361)
+[2018-08-29 00:13:19,261] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 00:13:19,262] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 00:13:19,262] INFO CouchbaseSourceTaskConfig values: 
+	batch.size.max = 2000
+	compat.connector_name_in_offsets = false
+	connection.bucket = regional
+	connection.cluster_address = [localhost]
+	connection.password = [hidden]
+	connection.ssl.enabled = false
+	connection.ssl.keystore.location = 
+	connection.ssl.keystore.password = [hidden]
+	connection.timeout.ms = 2000
+	connection.username = Administrator
+	dcp.message.converter.class = com.couchbase.connect.kafka.example.CustomSourceHandler
+	event.filter.class = com.couchbase.connect.kafka.filter.AllPassFilter
+	partitions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511]
+	topic.name = publish-history
+	use_snapshots = false
+ (com.couchbase.connect.kafka.CouchbaseSourceTaskConfig:223)
+[2018-08-29 00:13:19,262] INFO TaskConfig values: 
+	task.class = class com.couchbase.connect.kafka.CouchbaseSourceTask
+ (org.apache.kafka.connect.runtime.TaskConfig:223)
+[2018-08-29 00:13:19,262] INFO Instantiated task test-couchbase-source-1 with version 3.2.1 of type com.couchbase.connect.kafka.CouchbaseSourceTask (org.apache.kafka.connect.runtime.Worker:376)
+[2018-08-29 00:13:19,262] INFO ProducerConfig values: 
+	acks = all
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 9223372036854775807
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 2147483647
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+ (org.apache.kafka.clients.producer.ProducerConfig:223)
+[2018-08-29 00:13:19,266] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2018-08-29 00:13:19,266] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser:110)
+[2018-08-29 00:13:19,268] INFO Created connector test-couchbase-source (org.apache.kafka.connect.cli.ConnectStandalone:99)
+[2018-08-29 00:13:19,268] INFO CouchbaseSourceTaskConfig values: 
+	batch.size.max = 2000
+	compat.connector_name_in_offsets = false
+	connection.bucket = regional
+	connection.cluster_address = [localhost]
+	connection.password = [hidden]
+	connection.ssl.enabled = false
+	connection.ssl.keystore.location = 
+	connection.ssl.keystore.password = [hidden]
+	connection.timeout.ms = 2000
+	connection.username = Administrator
+	dcp.message.converter.class = com.couchbase.connect.kafka.example.CustomSourceHandler
+	event.filter.class = com.couchbase.connect.kafka.filter.AllPassFilter
+	partitions = [512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023]
+	topic.name = publish-history
+	use_snapshots = false
+ (com.couchbase.connect.kafka.CouchbaseSourceTaskConfig:223)
+[2018-08-29 00:13:19,320] INFO Environment Configuration Used: ClientEnvironment{clusterAt=[localhost/127.0.0.1:8091], connectionNameGenerator=DefaultConnectionNameGenerator, bucket='regional', passwordSet=true, dcpControl=DcpControl{{connection_buffer_size=20480}}, eventLoopGroup=NioEventLoopGroup, eventLoopGroupIsPrivate=true, poolBuffers=true, bufferAckWatermark=60, connectTimeout=2000, bootstrapTimeout=5000, sslEnabled=false, sslKeystoreFile='', sslKeystorePassword=false, sslKeystore=null} (com.couchbase.client.dcp.Client:120)
+[2018-08-29 00:13:19,320] INFO Environment Configuration Used: ClientEnvironment{clusterAt=[localhost/127.0.0.1:8091], connectionNameGenerator=DefaultConnectionNameGenerator, bucket='regional', passwordSet=true, dcpControl=DcpControl{{connection_buffer_size=20480}}, eventLoopGroup=NioEventLoopGroup, eventLoopGroupIsPrivate=true, poolBuffers=true, bufferAckWatermark=60, connectTimeout=2000, bootstrapTimeout=5000, sslEnabled=false, sslKeystoreFile='', sslKeystorePassword=false, sslKeystore=null} (com.couchbase.client.dcp.Client:120)
+[2018-08-29 00:13:19,322] INFO WorkerSourceTask{id=test-couchbase-source-0} Source task finished initialization and start (org.apache.kafka.connect.runtime.WorkerSourceTask:158)
+[2018-08-29 00:13:19,322] INFO Connecting to seed nodes and bootstrapping bucket regional. (com.couchbase.client.dcp.Client:120)
+[2018-08-29 00:13:19,322] INFO Connecting to seed nodes and bootstrapping bucket regional. (com.couchbase.client.dcp.Client:120)
+[2018-08-29 00:13:19,322] INFO WorkerSourceTask{id=test-couchbase-source-1} Source task finished initialization and start (org.apache.kafka.connect.runtime.WorkerSourceTask:158)
+[2018-08-29 00:13:19,327] INFO Connected to Node 127.0.0.1/localhost (com.couchbase.client.core.node.Node:115)
+[2018-08-29 00:13:19,327] INFO Connected to Node 127.0.0.1/localhost (com.couchbase.client.core.node.Node:115)
+[2018-08-29 00:13:19,358] INFO Opened bucket backOffice (com.couchbase.client.core.config.ConfigurationProvider:115)
+[2018-08-29 00:13:19,358] INFO Opened bucket backOffice (com.couchbase.client.core.config.ConfigurationProvider:115)
+[2018-08-29 00:13:19,417] INFO WorkerSinkTask{id=test-couchbase-sink-1} Sink task finished initialization and start (org.apache.kafka.connect.runtime.WorkerSinkTask:268)
+[2018-08-29 00:13:19,417] INFO WorkerSinkTask{id=test-couchbase-sink-0} Sink task finished initialization and start (org.apache.kafka.connect.runtime.WorkerSinkTask:268)
+[2018-08-29 00:13:19,435] INFO Connected to Node localhost/127.0.0.1:11210 (com.couchbase.client.dcp.conductor.DcpChannel:120)
+[2018-08-29 00:13:19,435] INFO Connected to Node localhost/127.0.0.1:11210 (com.couchbase.client.dcp.conductor.DcpChannel:120)
+[2018-08-29 00:13:19,604] WARN [Consumer clientId=consumer-2, groupId=connect-test-couchbase-sink] Error while fetching metadata with correlation id 2 : {publish-history=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient:246)
+[2018-08-29 00:13:19,604] WARN [Consumer clientId=consumer-1, groupId=connect-test-couchbase-sink] Error while fetching metadata with correlation id 2 : {publish-history=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient:246)
+[2018-08-29 00:13:19,679] INFO Starting to Stream for 512 partitions (com.couchbase.client.dcp.Client:115)
+[2018-08-29 00:13:19,714] WARN [Consumer clientId=consumer-2, groupId=connect-test-couchbase-sink] Error while fetching metadata with correlation id 4 : {publish-history=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient:246)
+[2018-08-29 00:13:19,714] WARN [Consumer clientId=consumer-1, groupId=connect-test-couchbase-sink] Error while fetching metadata with correlation id 4 : {publish-history=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient:246)
+[2018-08-29 00:13:19,738] INFO Starting to Stream for 512 partitions (com.couchbase.client.dcp.Client:115)
+[2018-08-29 00:13:19,822] WARN [Consumer clientId=consumer-2, groupId=connect-test-couchbase-sink] Error while fetching metadata with correlation id 6 : {publish-history=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient:246)
+[2018-08-29 00:13:19,891] INFO Poll returns 63 result(s) (com.couchbase.connect.kafka.CouchbaseSourceTask:190)
+[2018-08-29 00:13:19,989] INFO Poll returns 92 result(s) (com.couchbase.connect.kafka.CouchbaseSourceTask:190)
+[2018-08-29 00:13:20,077] INFO Poll returns 43 result(s) (com.couchbase.connect.kafka.CouchbaseSourceTask:190)
+[2018-08-29 00:13:20,200] INFO Poll returns 63 result(s) (com.couchbase.connect.kafka.CouchbaseSourceTask:190)
+[2018-08-29 00:13:20,414] INFO Poll returns 345 result(s) (com.couchbase.connect.kafka.CouchbaseSourceTask:190)
+[2018-08-29 00:13:20,433] INFO Poll returns 394 result(s) (com.couchbase.connect.kafka.CouchbaseSourceTask:190)
+[2018-08-29 00:13:20,886] INFO [Consumer clientId=consumer-2, groupId=connect-test-couchbase-sink] Discovered coordinator macbook-pro-4.lan:9092 (id: 2147483647 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:341)
+[2018-08-29 00:13:20,891] INFO [Consumer clientId=consumer-2, groupId=connect-test-couchbase-sink] Revoking previously assigned partitions [] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:341)
+[2018-08-29 00:13:20,891] INFO [Consumer clientId=consumer-2, groupId=connect-test-couchbase-sink] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:336)
+[2018-08-29 00:13:20,912] INFO [Consumer clientId=consumer-1, groupId=connect-test-couchbase-sink] Discovered coordinator macbook-pro-4.lan:9092 (id: 2147483647 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:341)
+[2018-08-29 00:13:20,913] INFO [Consumer clientId=consumer-1, groupId=connect-test-couchbase-sink] Revoking previously assigned partitions [] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:341)
+[2018-08-29 00:13:20,913] INFO [Consumer clientId=consumer-1, groupId=connect-test-couchbase-sink] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:336)
+[2018-08-29 00:13:20,928] INFO [Consumer clientId=consumer-2, groupId=connect-test-couchbase-sink] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:336)
+[2018-08-29 00:13:20,955] INFO [Consumer clientId=consumer-1, groupId=connect-test-couchbase-sink] Successfully joined group with generation 2 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:341)
+[2018-08-29 00:13:20,956] INFO [Consumer clientId=consumer-1, groupId=connect-test-couchbase-sink] Setting newly assigned partitions [publish-history-0] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:341)
+[2018-08-29 00:13:20,956] INFO [Consumer clientId=consumer-2, groupId=connect-test-couchbase-sink] Successfully joined group with generation 2 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:341)
+[2018-08-29 00:13:20,957] INFO [Consumer clientId=consumer-2, groupId=connect-test-couchbase-sink] Setting newly assigned partitions [] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:341)
+[2018-08-29 00:13:28,802] INFO WorkerSinkTask{id=test-couchbase-sink-0} Committing offsets asynchronously using sequence number 1: {publish-history-0=OffsetAndMetadata{offset=1000, metadata=''}} (org.apache.kafka.connect.runtime.WorkerSinkTask:311)
+[2018-08-29 00:13:29,266] INFO WorkerSourceTask{id=test-couchbase-source-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:306)
+[2018-08-29 00:13:29,266] INFO WorkerSourceTask{id=test-couchbase-source-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:323)
+[2018-08-29 00:13:29,287] INFO WorkerSourceTask{id=test-couchbase-source-0} Finished commitOffsets successfully in 21 ms (org.apache.kafka.connect.runtime.WorkerSourceTask:405)
+[2018-08-29 00:13:29,287] INFO WorkerSourceTask{id=test-couchbase-source-1} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:306)
+[2018-08-29 00:13:29,288] INFO WorkerSourceTask{id=test-couchbase-source-1} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:323)
+[2018-08-29 00:13:29,304] INFO WorkerSourceTask{id=test-couchbase-source-1} Finished commitOffsets successfully in 16 ms (org.apache.kafka.connect.runtime.WorkerSourceTask:405)
+[2018-08-29 00:13:32,279] INFO Kafka Connect stopping (org.apache.kafka.connect.runtime.Connect:65)
+[2018-08-29 00:13:32,279] INFO Stopping REST server (org.apache.kafka.connect.runtime.rest.RestServer:154)
+[2018-08-29 00:13:32,285] INFO Stopped ServerConnector@3f3737bd{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.server.ServerConnector:306)
+[2018-08-29 00:13:32,291] INFO Stopped o.e.j.s.ServletContextHandler@56d96ef4{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler:865)
+[2018-08-29 00:13:32,293] INFO REST server stopped (org.apache.kafka.connect.runtime.rest.RestServer:165)
+[2018-08-29 00:13:32,293] INFO Herder stopping (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:76)
+[2018-08-29 00:13:32,293] INFO Stopping task test-couchbase-source-0 (org.apache.kafka.connect.runtime.Worker:464)
+[2018-08-29 00:13:32,297] INFO Disconnected from Node localhost/127.0.0.1:11210 (com.couchbase.client.dcp.conductor.DcpChannel:115)
+[2018-08-29 00:13:32,299] INFO Shutdown complete. (com.couchbase.client.dcp.conductor.Conductor:115)
+[2018-08-29 00:13:32,306] INFO Stopping task test-couchbase-source-1 (org.apache.kafka.connect.runtime.Worker:464)
+[2018-08-29 00:13:32,307] INFO Disconnected from Node localhost/127.0.0.1:11210 (com.couchbase.client.dcp.conductor.DcpChannel:115)
+[2018-08-29 00:13:32,309] INFO Shutdown complete. (com.couchbase.client.dcp.conductor.Conductor:115)
+[2018-08-29 00:13:32,332] INFO WorkerSourceTask{id=test-couchbase-source-1} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:306)
+[2018-08-29 00:13:32,332] INFO WorkerSourceTask{id=test-couchbase-source-1} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:323)
+[2018-08-29 00:13:32,332] INFO [Producer clientId=producer-2] Closing the Kafka producer with timeoutMillis = 30000 ms. (org.apache.kafka.clients.producer.KafkaProducer:341)
+[2018-08-29 00:13:32,390] INFO WorkerSourceTask{id=test-couchbase-source-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:306)
+[2018-08-29 00:13:32,390] INFO WorkerSourceTask{id=test-couchbase-source-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:323)
+[2018-08-29 00:13:32,390] INFO [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms. (org.apache.kafka.clients.producer.KafkaProducer:341)
+[2018-08-29 00:13:32,393] INFO Stopping connector test-couchbase-source (org.apache.kafka.connect.runtime.Worker:304)
+[2018-08-29 00:13:32,393] INFO Stopped connector test-couchbase-source (org.apache.kafka.connect.runtime.Worker:320)
+[2018-08-29 00:13:32,393] INFO Stopping task test-couchbase-sink-0 (org.apache.kafka.connect.runtime.Worker:464)
+[2018-08-29 00:13:32,394] INFO Stopping task test-couchbase-sink-1 (org.apache.kafka.connect.runtime.Worker:464)
+[2018-08-29 00:13:32,402] INFO [localhost/127.0.0.1:11210][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 00:13:32,402] INFO [localhost/127.0.0.1:11210][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 00:13:32,402] INFO Disconnected from Node 127.0.0.1/localhost (com.couchbase.client.core.node.Node:115)
+[2018-08-29 00:13:32,403] INFO Closed bucket backOffice (com.couchbase.client.core.config.ConfigurationProvider:115)
+[2018-08-29 00:13:32,403] INFO Disconnected from Node 127.0.0.1/localhost (com.couchbase.client.core.node.Node:115)
+[2018-08-29 00:13:32,402] INFO Closed bucket backOffice (com.couchbase.client.core.config.ConfigurationProvider:115)
+[2018-08-29 00:13:32,420] INFO Stopping connector test-couchbase-sink (org.apache.kafka.connect.runtime.Worker:304)
+[2018-08-29 00:13:32,420] INFO Stopped connector test-couchbase-sink (org.apache.kafka.connect.runtime.Worker:320)
+[2018-08-29 00:13:32,420] INFO Worker stopping (org.apache.kafka.connect.runtime.Worker:154)
+[2018-08-29 00:13:32,421] INFO Stopped FileOffsetBackingStore (org.apache.kafka.connect.storage.FileOffsetBackingStore:67)
+[2018-08-29 00:13:32,422] INFO Worker stopped (org.apache.kafka.connect.runtime.Worker:175)
+[2018-08-29 00:13:32,422] INFO Herder stopped (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:86)
+[2018-08-29 00:13:32,422] INFO Kafka Connect stopped (org.apache.kafka.connect.runtime.Connect:70)

@@ -1,0 +1,831 @@
+[2018-08-29 15:35:08,396] INFO Kafka Connect standalone worker initializing ... (org.apache.kafka.connect.cli.ConnectStandalone:65)
+[2018-08-29 15:35:08,409] INFO WorkerInfo values: 
+	jvm.args = -Xmx256M, -XX:+UseG1GC, -XX:MaxGCPauseMillis=20, -XX:InitiatingHeapOccupancyPercent=35, -XX:+ExplicitGCInvokesConcurrent, -Djava.awt.headless=true, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -Dkafka.logs.dir=/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../logs, -Dlog4j.configuration=file:./bin/../config/connect-log4j.properties
+	jvm.spec = Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 1.8.0_71, 25.71-b15
+	jvm.classpath = /Users/austin/Downloads/kafka_2.11-1.0.0/libs/kafka-connect-couchbase-3.2.1/kafka-connect-couchbase-3.2.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/libs/kafka-connect-couchbase-3.2.1/custom-source-handler-1.0-SNAPSHOT.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/libs/kafka-connect-jdbc/KafkaConnectJDBC/target/kafka-connect-mysql-source-1.0-SNAPSHOT.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/argparse4j-0.7.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/commons-lang3-3.5.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-api-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-file-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-json-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-runtime-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/connect-transforms-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/guava-20.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/hk2-api-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/hk2-locator-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/hk2-utils-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-annotations-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-core-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-databind-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-jaxrs-base-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-jaxrs-json-provider-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jackson-module-jaxb-annotations-2.9.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javassist-3.20.0-GA.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javassist-3.21.0-GA.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.annotation-api-1.2.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.inject-1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.inject-2.5.0-b32.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.servlet-api-3.1.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-client-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-common-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-container-servlet-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-guava-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-media-jaxb-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jersey-server-2.25.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-continuation-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-http-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-io-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-security-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-server-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-servlet-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-servlets-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jetty-util-9.2.22.v20170606.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/jopt-simple-5.0.4.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-clients-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-connect-couchbase-3.2.1:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-connect-jdbc:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-log4j-appender-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-streams-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-streams-examples-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka-tools-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka_2.11-1.0.0-sources.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka_2.11-1.0.0-test-sources.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/kafka_2.11-1.0.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/log4j-1.2.17.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/lz4-java-1.4.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/maven-artifact-3.5.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/metrics-core-2.2.0.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/plexus-utils-3.0.24.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/reflections-0.9.11.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/rocksdbjni-5.7.3.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/scala-library-2.11.11.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/slf4j-api-1.7.25.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/snappy-java-1.1.4.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/validation-api-1.1.0.Final.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/zkclient-0.10.jar:/Users/austin/Downloads/kafka_2.11-1.0.0/bin/../libs/zookeeper-3.4.10.jar
+	os.spec = Mac OS X, x86_64, 10.13.6
+	os.vcpus = 8
+ (org.apache.kafka.connect.runtime.WorkerInfo:71)
+[2018-08-29 15:35:08,410] INFO Scanning for plugin classes. This might take a moment ... (org.apache.kafka.connect.cli.ConnectStandalone:74)
+[2018-08-29 15:35:10,988] INFO Registered loader: sun.misc.Launcher$AppClassLoader@18b4aac2 (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:202)
+[2018-08-29 15:35:10,989] INFO Added plugin 'org.apache.kafka.connect.tools.MockConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,989] INFO Added plugin 'org.apache.kafka.connect.tools.MockSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,989] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,989] INFO Added plugin 'org.apache.kafka.connect.tools.VerifiableSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,990] INFO Added plugin 'org.apache.kafka.connect.tools.VerifiableSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,990] INFO Added plugin 'com.kafkaconnect.sink.connector.SampleSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,990] INFO Added plugin 'com.couchbase.connect.kafka.CouchbaseSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,990] INFO Added plugin 'com.kafkaconnect.source.connector.JDBCSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,990] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,990] INFO Added plugin 'org.apache.kafka.connect.tools.SchemaSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,990] INFO Added plugin 'org.apache.kafka.connect.tools.MockSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,990] INFO Added plugin 'com.couchbase.connect.kafka.CouchbaseSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,991] INFO Added plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,991] INFO Added plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,991] INFO Added plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,991] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,992] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,992] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,992] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,992] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,992] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,992] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,992] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,993] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,994] INFO Added plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,994] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:135)
+[2018-08-29 15:35:10,995] INFO Added aliases 'CouchbaseSinkConnector' and 'CouchbaseSink' to plugin 'com.couchbase.connect.kafka.CouchbaseSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,995] INFO Added aliases 'CouchbaseSourceConnector' and 'CouchbaseSource' to plugin 'com.couchbase.connect.kafka.CouchbaseSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,995] INFO Added aliases 'SampleSinkConnector' and 'SampleSink' to plugin 'com.kafkaconnect.sink.connector.SampleSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,995] INFO Added aliases 'JDBCSourceConnector' and 'JDBCSource' to plugin 'com.kafkaconnect.source.connector.JDBCSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,995] INFO Added aliases 'FileStreamSinkConnector' and 'FileStreamSink' to plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,996] INFO Added aliases 'FileStreamSourceConnector' and 'FileStreamSource' to plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,996] INFO Added aliases 'MockConnector' and 'Mock' to plugin 'org.apache.kafka.connect.tools.MockConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,996] INFO Added aliases 'MockSinkConnector' and 'MockSink' to plugin 'org.apache.kafka.connect.tools.MockSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,996] INFO Added aliases 'MockSourceConnector' and 'MockSource' to plugin 'org.apache.kafka.connect.tools.MockSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,996] INFO Added aliases 'SchemaSourceConnector' and 'SchemaSource' to plugin 'org.apache.kafka.connect.tools.SchemaSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,997] INFO Added aliases 'VerifiableSinkConnector' and 'VerifiableSink' to plugin 'org.apache.kafka.connect.tools.VerifiableSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,997] INFO Added aliases 'VerifiableSourceConnector' and 'VerifiableSource' to plugin 'org.apache.kafka.connect.tools.VerifiableSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,997] INFO Added aliases 'ByteArrayConverter' and 'ByteArray' to plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,997] INFO Added aliases 'JsonConverter' and 'Json' to plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,997] INFO Added aliases 'StringConverter' and 'String' to plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:330)
+[2018-08-29 15:35:10,998] INFO Added alias 'RegexRouter' to plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:327)
+[2018-08-29 15:35:10,998] INFO Added alias 'TimestampRouter' to plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:327)
+[2018-08-29 15:35:10,999] INFO Added alias 'ValueToKey' to plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:327)
+[2018-08-29 15:35:11,011] INFO StandaloneConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	bootstrap.servers = [localhost:9092]
+	internal.key.converter = class org.apache.kafka.connect.json.JsonConverter
+	internal.value.converter = class org.apache.kafka.connect.json.JsonConverter
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 10000
+	offset.flush.timeout.ms = 5000
+	offset.storage.file.filename = /tmp/connect.offsets
+	plugin.path = null
+	rest.advertised.host.name = null
+	rest.advertised.port = null
+	rest.host.name = null
+	rest.port = 8083
+	task.shutdown.graceful.timeout.ms = 5000
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.standalone.StandaloneConfig:223)
+[2018-08-29 15:35:11,143] INFO Logging initialized @3067ms (org.eclipse.jetty.util.log:186)
+[2018-08-29 15:35:11,282] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2018-08-29 15:35:11,283] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser:110)
+[2018-08-29 15:35:11,297] INFO Kafka Connect standalone worker initialization took 2899ms (org.apache.kafka.connect.cli.ConnectStandalone:87)
+[2018-08-29 15:35:11,297] INFO Kafka Connect starting (org.apache.kafka.connect.runtime.Connect:49)
+[2018-08-29 15:35:11,297] INFO Herder starting (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:70)
+[2018-08-29 15:35:11,297] INFO Worker starting (org.apache.kafka.connect.runtime.Worker:142)
+[2018-08-29 15:35:11,298] INFO Starting FileOffsetBackingStore with file /tmp/connect.offsets (org.apache.kafka.connect.storage.FileOffsetBackingStore:59)
+[2018-08-29 15:35:11,299] INFO Worker started (org.apache.kafka.connect.runtime.Worker:147)
+[2018-08-29 15:35:11,299] INFO Herder started (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:72)
+[2018-08-29 15:35:11,299] INFO Starting REST server (org.apache.kafka.connect.runtime.rest.RestServer:98)
+[2018-08-29 15:35:11,360] INFO jetty-9.2.22.v20170606 (org.eclipse.jetty.server.Server:327)
+Aug 29, 2018 3:35:11 PM org.glassfish.jersey.internal.Errors logErrors
+WARNING: The following warnings have been detected: WARNING: The (sub)resource method listConnectors in org.apache.kafka.connect.runtime.rest.resources.ConnectorsResource contains empty path annotation.
+WARNING: The (sub)resource method createConnector in org.apache.kafka.connect.runtime.rest.resources.ConnectorsResource contains empty path annotation.
+WARNING: The (sub)resource method listConnectorPlugins in org.apache.kafka.connect.runtime.rest.resources.ConnectorPluginsResource contains empty path annotation.
+WARNING: The (sub)resource method serverInfo in org.apache.kafka.connect.runtime.rest.resources.RootResource contains empty path annotation.
+
+[2018-08-29 15:35:11,745] INFO Started o.e.j.s.ServletContextHandler@435b70b{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler:744)
+[2018-08-29 15:35:11,775] INFO Started ServerConnector@28e826c3{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.server.ServerConnector:266)
+[2018-08-29 15:35:11,776] INFO Started @3700ms (org.eclipse.jetty.server.Server:379)
+[2018-08-29 15:35:11,776] INFO REST server listening at http://192.168.86.32:8083/, advertising URL http://192.168.86.32:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:150)
+[2018-08-29 15:35:11,776] INFO Kafka Connect started (org.apache.kafka.connect.runtime.Connect:55)
+[2018-08-29 15:35:11,782] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 15:35:11,783] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 15:35:11,783] INFO Creating connector test-couchbase-sink of type com.couchbase.connect.kafka.CouchbaseSinkConnector (org.apache.kafka.connect.runtime.Worker:205)
+[2018-08-29 15:35:11,786] INFO Instantiated connector test-couchbase-sink with version 3.2.1 of type class com.couchbase.connect.kafka.CouchbaseSinkConnector (org.apache.kafka.connect.runtime.Worker:208)
+[2018-08-29 15:35:11,787] INFO Finished creating connector test-couchbase-sink (org.apache.kafka.connect.runtime.Worker:227)
+[2018-08-29 15:35:11,788] INFO SinkConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	topics = [publish-history]
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:223)
+[2018-08-29 15:35:11,788] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	topics = [publish-history]
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 15:35:11,790] INFO Creating task test-couchbase-sink-0 (org.apache.kafka.connect.runtime.Worker:361)
+[2018-08-29 15:35:11,790] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 15:35:11,790] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 15:35:11,792] INFO TaskConfig values: 
+	task.class = class com.couchbase.connect.kafka.CouchbaseSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:223)
+[2018-08-29 15:35:11,793] INFO Instantiated task test-couchbase-sink-0 with version 3.2.1 of type com.couchbase.connect.kafka.CouchbaseSinkTask (org.apache.kafka.connect.runtime.Worker:376)
+[2018-08-29 15:35:11,810] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-test-couchbase-sink
+	heartbeat.interval.ms = 3000
+	interceptor.classes = null
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 305000
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:223)
+[2018-08-29 15:35:11,855] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2018-08-29 15:35:11,855] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser:110)
+[2018-08-29 15:35:11,857] INFO Creating task test-couchbase-sink-1 (org.apache.kafka.connect.runtime.Worker:361)
+[2018-08-29 15:35:11,857] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 15:35:11,857] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSinkConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-sink
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 15:35:11,857] INFO TaskConfig values: 
+	task.class = class com.couchbase.connect.kafka.CouchbaseSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:223)
+[2018-08-29 15:35:11,857] INFO Instantiated task test-couchbase-sink-1 with version 3.2.1 of type com.couchbase.connect.kafka.CouchbaseSinkTask (org.apache.kafka.connect.runtime.Worker:376)
+[2018-08-29 15:35:11,858] INFO CouchbaseSinkTaskConfig values: 
+	connection.bucket = backOffice
+	connection.cluster_address = [localhost]
+	connection.password = [hidden]
+	connection.ssl.enabled = false
+	connection.ssl.keystore.location = 
+	connection.ssl.keystore.password = [hidden]
+	connection.timeout.ms = 10000
+	connection.username = Administrator
+	couchbase.document.id = 
+	couchbase.remove.document.id = false
+ (com.couchbase.connect.kafka.CouchbaseSinkTaskConfig:223)
+[2018-08-29 15:35:11,859] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-test-couchbase-sink
+	heartbeat.interval.ms = 3000
+	interceptor.classes = null
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 305000
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:223)
+[2018-08-29 15:35:11,864] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2018-08-29 15:35:11,864] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser:110)
+[2018-08-29 15:35:11,865] INFO CouchbaseSinkTaskConfig values: 
+	connection.bucket = backOffice
+	connection.cluster_address = [localhost]
+	connection.password = [hidden]
+	connection.ssl.enabled = false
+	connection.ssl.keystore.location = 
+	connection.ssl.keystore.password = [hidden]
+	connection.timeout.ms = 10000
+	connection.username = Administrator
+	couchbase.document.id = 
+	couchbase.remove.document.id = false
+ (com.couchbase.connect.kafka.CouchbaseSinkTaskConfig:223)
+[2018-08-29 15:35:11,866] INFO Created connector test-couchbase-sink (org.apache.kafka.connect.cli.ConnectStandalone:99)
+[2018-08-29 15:35:11,868] INFO ConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:223)
+[2018-08-29 15:35:11,868] INFO EnrichedConnectorConfig values: 
+	connector.class = com.couchbase.connect.kafka.CouchbaseSourceConnector
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = test-couchbase-source
+	tasks.max = 2
+	transforms = null
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:223)
+[2018-08-29 15:35:11,868] INFO Creating connector test-couchbase-source of type com.couchbase.connect.kafka.CouchbaseSourceConnector (org.apache.kafka.connect.runtime.Worker:205)
+[2018-08-29 15:35:11,869] INFO Instantiated connector test-couchbase-source with version 3.2.1 of type class com.couchbase.connect.kafka.CouchbaseSourceConnector (org.apache.kafka.connect.runtime.Worker:208)
+[2018-08-29 15:35:11,869] INFO CouchbaseSourceConnectorConfig values: 
+	batch.size.max = 2000
+	compat.connector_name_in_offsets = false
+	connection.bucket = regional
+	connection.cluster_address = [localhost]
+	connection.password = [hidden]
+	connection.ssl.enabled = false
+	connection.ssl.keystore.location = 
+	connection.ssl.keystore.password = [hidden]
+	connection.timeout.ms = 2000
+	connection.username = Administrator
+	dcp.message.converter.class = com.couchbase.connect.kafka.example.CustomSourceHandler
+	event.filter.class = com.couchbase.connect.kafka.filter.AllPassFilter
+	topic.name = publish-history
+	use_snapshots = false
+ (com.couchbase.connect.kafka.CouchbaseSourceConnectorConfig:223)
+[2018-08-29 15:35:11,951] INFO CouchbaseEnvironment: {sslEnabled=false, sslKeystoreFile='', sslKeystorePassword=false, sslKeystore=null, bootstrapHttpEnabled=true, bootstrapCarrierEnabled=true, bootstrapHttpDirectPort=8091, bootstrapHttpSslPort=18091, bootstrapCarrierDirectPort=11210, bootstrapCarrierSslPort=11207, ioPoolSize=8, computationPoolSize=8, responseBufferSize=16384, requestBufferSize=16384, kvServiceEndpoints=1, viewServiceEndpoints=12, queryServiceEndpoints=12, searchServiceEndpoints=12, configPollInterval=10000, ioPool=NioEventLoopGroup, kvIoPool=null, viewIoPool=null, searchIoPool=null, queryIoPool=null, coreScheduler=CoreScheduler, memcachedHashingStrategy=DefaultMemcachedHashingStrategy, eventBus=DefaultEventBus, packageNameAndVersion=couchbase-java-client/2.5.1 (git: 2.5.1, core: 1.4.7), dcpEnabled=false, retryStrategy=BestEffort, maxRequestLifetime=75000, retryDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=100, upper=100000}, reconnectDelay=ExponentialDelay{growBy 1.0 MILLISECONDS, powers of 2; lower=32, upper=4096}, observeIntervalDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=10, upper=100000}, keepAliveInterval=30000, continuousKeepAliveEnabled=true, keepAliveErrorThreshold=4, keepAliveTimeout=2500, autoreleaseAfter=2000, bufferPoolingEnabled=true, tcpNodelayEnabled=true, mutationTokensEnabled=false, socketConnectTimeout=1000, dcpConnectionBufferSize=20971520, dcpConnectionBufferAckThreshold=0.2, dcpConnectionName=dcp/core-io, callbacksOnIoPool=false, disconnectTimeout=25000, requestBufferWaitStrategy=com.couchbase.client.core.env.DefaultCoreEnvironment$2@35fb0ffb, certAuthEnabled=false, queryTimeout=75000, viewTimeout=75000, searchTimeout=75000, analyticsTimeout=75000, kvTimeout=2500, connectTimeout=10000, dnsSrvEnabled=false} (com.couchbase.client.core.CouchbaseCore:115)
+[2018-08-29 15:35:11,951] INFO CouchbaseEnvironment: {sslEnabled=false, sslKeystoreFile='', sslKeystorePassword=false, sslKeystore=null, bootstrapHttpEnabled=true, bootstrapCarrierEnabled=true, bootstrapHttpDirectPort=8091, bootstrapHttpSslPort=18091, bootstrapCarrierDirectPort=11210, bootstrapCarrierSslPort=11207, ioPoolSize=8, computationPoolSize=8, responseBufferSize=16384, requestBufferSize=16384, kvServiceEndpoints=1, viewServiceEndpoints=12, queryServiceEndpoints=12, searchServiceEndpoints=12, configPollInterval=10000, ioPool=NioEventLoopGroup, kvIoPool=null, viewIoPool=null, searchIoPool=null, queryIoPool=null, coreScheduler=CoreScheduler, memcachedHashingStrategy=DefaultMemcachedHashingStrategy, eventBus=DefaultEventBus, packageNameAndVersion=couchbase-java-client/2.5.1 (git: 2.5.1, core: 1.4.7), dcpEnabled=false, retryStrategy=BestEffort, maxRequestLifetime=75000, retryDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=100, upper=100000}, reconnectDelay=ExponentialDelay{growBy 1.0 MILLISECONDS, powers of 2; lower=32, upper=4096}, observeIntervalDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=10, upper=100000}, keepAliveInterval=30000, continuousKeepAliveEnabled=true, keepAliveErrorThreshold=4, keepAliveTimeout=2500, autoreleaseAfter=2000, bufferPoolingEnabled=true, tcpNodelayEnabled=true, mutationTokensEnabled=false, socketConnectTimeout=1000, dcpConnectionBufferSize=20971520, dcpConnectionBufferAckThreshold=0.2, dcpConnectionName=dcp/core-io, callbacksOnIoPool=false, disconnectTimeout=25000, requestBufferWaitStrategy=com.couchbase.client.core.env.DefaultCoreEnvironment$2@40c72d05, certAuthEnabled=false, queryTimeout=75000, viewTimeout=75000, searchTimeout=75000, analyticsTimeout=75000, kvTimeout=2500, connectTimeout=10000, dnsSrvEnabled=false} (com.couchbase.client.core.CouchbaseCore:115)
+[2018-08-29 15:35:12,048] ERROR WorkerConnector{id=test-couchbase-source} Error while starting connector (org.apache.kafka.connect.runtime.WorkerConnector:116)
+org.apache.kafka.connect.errors.ConnectException: Cannot fetch configuration for bucket regional
+	at com.couchbase.connect.kafka.CouchbaseSourceConnector.start(CouchbaseSourceConnector.java:55)
+	at org.apache.kafka.connect.runtime.WorkerConnector.doStart(WorkerConnector.java:108)
+	at org.apache.kafka.connect.runtime.WorkerConnector.start(WorkerConnector.java:133)
+	at org.apache.kafka.connect.runtime.WorkerConnector.transitionTo(WorkerConnector.java:192)
+	at org.apache.kafka.connect.runtime.Worker.startConnector(Worker.java:211)
+	at org.apache.kafka.connect.runtime.standalone.StandaloneHerder.startConnector(StandaloneHerder.java:252)
+	at org.apache.kafka.connect.runtime.standalone.StandaloneHerder.putConnectorConfig(StandaloneHerder.java:178)
+	at org.apache.kafka.connect.cli.ConnectStandalone.main(ConnectStandalone.java:102)
+[2018-08-29 15:35:12,053] INFO Finished creating connector test-couchbase-source (org.apache.kafka.connect.runtime.Worker:227)
+[2018-08-29 15:35:12,053] INFO Skipping reconfiguration of connector test-couchbase-source since it is not running (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:292)
+[2018-08-29 15:35:12,053] INFO Created connector test-couchbase-source (org.apache.kafka.connect.cli.ConnectStandalone:99)
+[2018-08-29 15:35:12,055] ERROR Failed to create job for libs/kafka-connect-jdbc/KafkaConnectJDBC/src/main/config/Connector-mysql-Source.properties (org.apache.kafka.connect.cli.ConnectStandalone:97)
+[2018-08-29 15:35:12,055] ERROR Stopping after connector error (org.apache.kafka.connect.cli.ConnectStandalone:108)
+java.util.concurrent.ExecutionException: org.apache.kafka.connect.runtime.rest.errors.BadRequestException: Connector configuration is invalid and contains the following 2 error(s):
+Missing required configuration "connection.user" which has no default value.
+Missing required configuration "connection.password" which has no default value.
+You can also find the above list of errors at the endpoint `/{connectorType}/config/validate`
+	at org.apache.kafka.connect.util.ConvertingFutureCallback.result(ConvertingFutureCallback.java:79)
+	at org.apache.kafka.connect.util.ConvertingFutureCallback.get(ConvertingFutureCallback.java:66)
+	at org.apache.kafka.connect.cli.ConnectStandalone.main(ConnectStandalone.java:105)
+Caused by: org.apache.kafka.connect.runtime.rest.errors.BadRequestException: Connector configuration is invalid and contains the following 2 error(s):
+Missing required configuration "connection.user" which has no default value.
+Missing required configuration "connection.password" which has no default value.
+You can also find the above list of errors at the endpoint `/{connectorType}/config/validate`
+	at org.apache.kafka.connect.runtime.AbstractHerder.maybeAddConfigErrors(AbstractHerder.java:386)
+	at org.apache.kafka.connect.runtime.standalone.StandaloneHerder.putConnectorConfig(StandaloneHerder.java:163)
+	at org.apache.kafka.connect.cli.ConnectStandalone.main(ConnectStandalone.java:102)
+[2018-08-29 15:35:12,055] INFO Kafka Connect stopping (org.apache.kafka.connect.runtime.Connect:65)
+[2018-08-29 15:35:12,055] INFO Stopping REST server (org.apache.kafka.connect.runtime.rest.RestServer:154)
+[2018-08-29 15:35:12,059] INFO Stopped ServerConnector@28e826c3{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.server.ServerConnector:306)
+[2018-08-29 15:35:12,074] INFO Stopped o.e.j.s.ServletContextHandler@435b70b{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler:865)
+[2018-08-29 15:35:12,075] INFO REST server stopped (org.apache.kafka.connect.runtime.rest.RestServer:165)
+[2018-08-29 15:35:12,075] INFO Herder stopping (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:76)
+[2018-08-29 15:35:12,075] INFO Stopping connector test-couchbase-source (org.apache.kafka.connect.runtime.Worker:304)
+[2018-08-29 15:35:12,076] INFO Stopped connector test-couchbase-source (org.apache.kafka.connect.runtime.Worker:320)
+[2018-08-29 15:35:12,076] INFO Stopping task test-couchbase-sink-0 (org.apache.kafka.connect.runtime.Worker:464)
+[2018-08-29 15:35:12,076] INFO Stopping task test-couchbase-sink-1 (org.apache.kafka.connect.runtime.Worker:464)
+[2018-08-29 15:35:12,440] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,440] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,462] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,463] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,484] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,486] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,502] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,503] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,521] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,521] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,538] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,539] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,553] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,555] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,576] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,578] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,593] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,594] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,608] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,610] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,625] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,626] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,641] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,641] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,657] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,658] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,673] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,676] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,690] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,693] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,707] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,711] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,726] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,731] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,744] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,749] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,762] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,767] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,777] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,782] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,792] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,797] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,806] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,810] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,819] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,824] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,835] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,839] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,849] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,853] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,863] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,874] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,878] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,888] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,892] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,902] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,907] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,917] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,922] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,933] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,935] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,947] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,949] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,962] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,964] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,976] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,977] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,990] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:12,990] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,004] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,004] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,018] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,018] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,031] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,031] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,046] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,046] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,060] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,060] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,073] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,073] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,087] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,087] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,101] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,101] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,115] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,115] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,129] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,129] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,142] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,142] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,156] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,156] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,169] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,170] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,185] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,186] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,199] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,199] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,213] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,216] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,227] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,230] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,241] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,244] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,255] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,257] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,269] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,273] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,284] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,286] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,298] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,299] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,312] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,313] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,325] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,326] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,339] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,339] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,353] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,353] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,366] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,366] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,380] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,380] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,394] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,394] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,409] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,409] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,424] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,424] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,438] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,438] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,452] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,452] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,464] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,465] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,478] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,478] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,491] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,491] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,505] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,505] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,519] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,519] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,533] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,533] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,546] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,546] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,560] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,560] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,574] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,574] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,586] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,587] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,600] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,600] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,613] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,613] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,626] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,627] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,646] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,646] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,660] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,660] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,673] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,673] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,686] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,686] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,700] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,701] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,715] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,715] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,728] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,728] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,742] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,743] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,756] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,756] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,769] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,769] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,782] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,782] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,795] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,795] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,808] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,808] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,822] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,822] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,837] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,837] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,851] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,851] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,865] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,865] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,884] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,884] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,897] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,897] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,911] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,911] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,924] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,925] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,938] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,938] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,951] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,951] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,965] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,965] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,979] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,979] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,991] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:13,992] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,005] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,005] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,020] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,020] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,036] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,036] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,050] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,050] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,063] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,063] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,076] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,076] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,089] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,089] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,103] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,103] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,116] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,117] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,129] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,130] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,143] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,143] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,156] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,156] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,169] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,169] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,182] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,182] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,196] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,196] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,209] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,209] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,222] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,222] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,236] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,236] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,249] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,250] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,263] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,263] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,276] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,276] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,291] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,291] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,306] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,306] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,320] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,320] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,333] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,333] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,347] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,347] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,361] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,361] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,375] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,375] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,388] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,388] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,402] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,402] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,415] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,415] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,429] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,429] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,442] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,442] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,456] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,457] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,469] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,470] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,482] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,482] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,496] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,496] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,509] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,509] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,523] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,523] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,536] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,536] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,548] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,548] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,561] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,561] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,575] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,575] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,588] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,588] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,601] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,601] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,624] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,624] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,645] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,645] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,659] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,659] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,673] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,673] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,688] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,688] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,701] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,701] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,714] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,714] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,728] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,731] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,748] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,750] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,764] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,765] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,780] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,783] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,796] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,799] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,813] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,814] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,831] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,831] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,847] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,848] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,863] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,863] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,879] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,882] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,894] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,897] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,909] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,912] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,924] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,927] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,939] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,939] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,954] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,955] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,967] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,967] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,981] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,981] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,994] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:14,994] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,006] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,006] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,019] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,019] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,032] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,033] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,046] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,046] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,058] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,058] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,071] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,072] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,084] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,084] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,089] WARN [null][KeyValueEndpoint]: Socket connect took longer than specified timeout. (com.couchbase.client.core.endpoint.Endpoint:145)
+[2018-08-29 15:35:15,089] WARN [null][KeyValueEndpoint]: Socket connect took longer than specified timeout. (com.couchbase.client.core.endpoint.Endpoint:145)
+[2018-08-29 15:35:15,106] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,108] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,130] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,130] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,130] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,137] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,139] ERROR WorkerSinkTask{id=test-couchbase-sink-0} Task threw an uncaught and unrecoverable exception (org.apache.kafka.connect.runtime.WorkerTask:172)
+com.couchbase.client.java.error.BucketDoesNotExistException: Bucket "backOffice" does not exist.
+	at com.couchbase.client.java.CouchbaseAsyncCluster$OpenBucketErrorHandler.call(CouchbaseAsyncCluster.java:640)
+	at com.couchbase.client.java.CouchbaseAsyncCluster$OpenBucketErrorHandler.call(CouchbaseAsyncCluster.java:627)
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:140)
+	at rx.internal.operators.OnSubscribeMap$MapSubscriber.onError(OnSubscribeMap.java:88)
+	at rx.observers.Subscribers$5.onError(Subscribers.java:230)
+	at rx.internal.operators.OperatorObserveOn$ObserveOnSubscriber.checkTerminated(OperatorObserveOn.java:273)
+	at rx.internal.operators.OperatorObserveOn$ObserveOnSubscriber.call(OperatorObserveOn.java:216)
+	at rx.internal.schedulers.ScheduledAction.run(ScheduledAction.java:55)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-08-29 15:35:15,139] ERROR WorkerSinkTask{id=test-couchbase-sink-1} Task threw an uncaught and unrecoverable exception (org.apache.kafka.connect.runtime.WorkerTask:172)
+com.couchbase.client.java.error.BucketDoesNotExistException: Bucket "backOffice" does not exist.
+	at com.couchbase.client.java.CouchbaseAsyncCluster$OpenBucketErrorHandler.call(CouchbaseAsyncCluster.java:640)
+	at com.couchbase.client.java.CouchbaseAsyncCluster$OpenBucketErrorHandler.call(CouchbaseAsyncCluster.java:627)
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:140)
+	at rx.internal.operators.OnSubscribeMap$MapSubscriber.onError(OnSubscribeMap.java:88)
+	at rx.observers.Subscribers$5.onError(Subscribers.java:230)
+	at rx.internal.operators.OperatorObserveOn$ObserveOnSubscriber.checkTerminated(OperatorObserveOn.java:273)
+	at rx.internal.operators.OperatorObserveOn$ObserveOnSubscriber.call(OperatorObserveOn.java:216)
+	at rx.internal.schedulers.ScheduledAction.run(ScheduledAction.java:55)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-08-29 15:35:15,139] ERROR WorkerSinkTask{id=test-couchbase-sink-0} Task is being killed and will not recover until manually restarted (org.apache.kafka.connect.runtime.WorkerTask:173)
+[2018-08-29 15:35:15,140] ERROR WorkerSinkTask{id=test-couchbase-sink-1} Task is being killed and will not recover until manually restarted (org.apache.kafka.connect.runtime.WorkerTask:173)
+[2018-08-29 15:35:15,147] INFO Stopping connector test-couchbase-sink (org.apache.kafka.connect.runtime.Worker:304)
+[2018-08-29 15:35:15,148] INFO Stopped connector test-couchbase-sink (org.apache.kafka.connect.runtime.Worker:320)
+[2018-08-29 15:35:15,148] INFO Worker stopping (org.apache.kafka.connect.runtime.Worker:154)
+[2018-08-29 15:35:15,148] INFO Stopped FileOffsetBackingStore (org.apache.kafka.connect.storage.FileOffsetBackingStore:67)
+[2018-08-29 15:35:15,148] INFO Worker stopped (org.apache.kafka.connect.runtime.Worker:175)
+[2018-08-29 15:35:15,149] INFO Herder stopped (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:86)
+[2018-08-29 15:35:15,149] INFO Kafka Connect stopped (org.apache.kafka.connect.runtime.Connect:70)
+[2018-08-29 15:35:15,153] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,154] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
+[2018-08-29 15:35:15,154] INFO [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect. (com.couchbase.client.core.endpoint.Endpoint:115)
